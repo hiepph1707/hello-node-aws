@@ -20,9 +20,9 @@ pipeline {
 	STAGING_CLUSTER = 'ecs-toja04-nodejs-staging'
 	STAGING_SERVICE = 'srv-ecs-toja04-nodejs-staging'
 	   
-	RELEASE_TASK    = 'td-ecs-toja04-nodejs-staging'
-	RELEASE_CLUSTER = 'nodejs-release-cluster'
-	RELEASE_SERVICE = 'nodejs-release-srv'
+	RELEASE_TASK    = 'td-ecs-toja04-nodejs-release'
+	RELEASE_CLUSTER = 'ecs-toja04-nodejs-release'
+	RELEASE_SERVICE = 'srv-ecs-toja04-nodejs-release'
    }
 
    stages {
@@ -52,7 +52,7 @@ pipeline {
         }
       stage('[NODEJS] Deploy to production') {
            when {
-                branch 'release' 
+                branch 'main' 
             }
             steps {
 		echo "****** Deploy to ${BRANCH_NAME} branch ******"

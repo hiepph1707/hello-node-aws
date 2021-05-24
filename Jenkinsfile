@@ -16,7 +16,7 @@ pipeline {
 	AWS_DEFAULT_REGION    = 'ap-southeast-1'
 	AWS_DEFAULT_OUTPUT    = 'json'
 	   
-	STAGING_TASK    = 'nodejs-staging-task'
+	STAGING_TASK    = 'td-ecs-toja04-nodejs-staging'
 	STAGING_CLUSTER = 'ecs-toja04-nodejs-staging'
 	STAGING_SERVICE = 'srv-ecs-toja04-nodejs-staging'
 	   

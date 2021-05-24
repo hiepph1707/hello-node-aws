@@ -62,7 +62,7 @@ pipeline {
    }
       post {
            always {
-           	emailext attachLog: true, body: """<p>Check console output at ${env.BUILD_URL} to view the results.:</p>""", to: '$DEFAULT_RECIPIENTS, cc:blazefuegorvc@gmail.com', subject: """${env.JOB_NAME} - Build # ${env.BUILD_NUMBER} [${currentBuild.currentResult}]"""
+           	emailext attachLog: true, body: """<p>Check console output at ${env.BUILD_URL} to view the results.:</p>""", to: '$DEFAULT_RECIPIENTS', subject: """${env.JOB_NAME} - Build # ${env.BUILD_NUMBER} [${currentBuild.currentResult}]"""
       	   }
       }
 }

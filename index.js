@@ -7,7 +7,7 @@ const app_version = process.env.APP_VERSION || "unknown";
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   //const msg = 'Hello Node!\n'
-  const msg = `Hello NodeJS! Application version ${app_version} - Environment ${app_env}\n`
+  const msg = `Hello T0JA04! Application version ${app_version} - Environment ${app_env}\n`
   res.end(msg);
 });
 

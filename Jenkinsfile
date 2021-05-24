@@ -1,13 +1,13 @@
 
 pipeline {
    
-   agent { label 'node1' }
+   agent { label 'master' }
    
    environment { 
 	   
 	DOCKER_IMAGE = 'nodejs/app'
 	   
-	ECR_REPO = '007293158826.dkr.ecr.ap-southeast-1.amazonaws.com/nodejs'
+	ECR_REPO = '685218805491.dkr.ecr.ap-southeast-1.amazonaws.com/nodejs'
 	APP_VERSION = "${BUILD_ID}"
         APP_ENV = "${BRANCH_NAME}"
    
@@ -17,10 +17,10 @@ pipeline {
 	AWS_DEFAULT_OUTPUT    = 'json'
 	   
 	STAGING_TASK    = 'nodejs-staging-task'
-	STAGING_CLUSTER = 'nodejs-staging-cluster1'
-	STAGING_SERVICE = 'nodejs-staging-srv'
+	STAGING_CLUSTER = 'ecs-toja04-nodejs-staging'
+	STAGING_SERVICE = 'srv-ecs-toja04-nodejs-staging'
 	   
-	RELEASE_TASK    = 'nodejs-release-task'
+	RELEASE_TASK    = 'td-ecs-toja04-nodejs-staging'
 	RELEASE_CLUSTER = 'nodejs-release-cluster'
 	RELEASE_SERVICE = 'nodejs-release-srv'
    }
